@@ -1,57 +1,187 @@
-/* Hero container setup */
-.hero {
-    position: relative;
-    width: 100%;
-    max-width: 840px;
+:root {
+    --body-font: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --heading-font: "Georgia", "Times New Roman", serif;
+    --primary-color: #0b5f6f;
+    /* deep teal for headings */
+    --accent1-color: #0e9aa7;
+    /* lighter teal for body text */
+    --accent2-color: #f2a365;
+    /* warm accent */
+    --muted-color: #6b6b6b;
+    /* muted text */
+    --max-width: 840px;
+}
+
+/* Reset box model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page layout */
+body {
+    font-family: var(--body-font);
+    color: var(--accent1-color);
+    background: #fff;
+    line-height: 1.5;
+}
+
+header,
+main,
+footer {
+    width: var(--max-width);
     margin: 0 auto;
 }
 
-/* Hero background image styling */
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.logo {
+    height: 56px;
+    width: auto;
+}
+
+/* Simple nav styling */
+nav a {
+    margin-left: 12px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Headings */
+h1,
+h2 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+/* Basic spacing for common elements */
+nav,
+p,
+section,
+article {
+    margin: 16px;
+    padding: 8px;
+}
+
+/* Hero area */
+.hero {
+    position: relative;
+    margin-top: 8px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Hero image fills the container */
 .hero img {
     display: block;
     width: 100%;
     height: auto;
 }
 
-/* Overlay heading styling */
+/* H1 overlay on hero */
 .hero h1 {
     position: absolute;
     top: 20px;
     width: 100%;
     padding: 16px;
     text-align: center;
-    opacity: 0.7;
+    opacity: 0.85;
     background-color: var(--accent1-color);
     color: #fff;
-    font-size: 2rem;
-    font-family: var(--heading-font);
+    font-size: 1.6rem;
+    letter-spacing: 0.5px;
 }
 
-/* Article overlay styling */
+/* Article overlay positioned near bottom-left */
 .hero article {
     position: absolute;
-    bottom: 40px;
-    left: 20px;
-    background-color: #fef08a;
-    padding: 16px;
-    width: 320px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    bottom: 16px;
+    left: 16px;
+    width: calc(100% - 32px);
+    max-width: 520px;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 12px;
+    border-radius: 6px;
 }
 
-/* Article image styling */
+/* Image inside the article floats right */
 .hero article img {
     float: right;
     width: 125px;
+    height: auto;
     margin-left: 12px;
-    margin-bottom: 8px;
     border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* Optional: Clear float inside article */
-.hero article::after {
-    content: "";
-    display: table;
-    clear: both;
+/* History and Adventure sections */
+.history h2,
+.adventure h2 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+}
+
+.history p {
+    color: var(--muted-color);
+}
+
+/* Footer */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-top: 1px solid #eee;
+    margin-top: 24px;
+}
+
+footer p {
+    color: var(--muted-color);
+    font-size: 0.95rem;
+}
+
+/* Social media links - remove underline for image links */
+.socialmedia a {
+    text-decoration: none;
+    margin-left: 8px;
+}
+
+.socialmedia img {
+    width: 28px;
+    height: 28px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Responsive tweak for narrow screens */
+@media (max-width: 880px) {
+
+    header,
+    main,
+    footer {
+        width: 94%;
+    }
+
+    .hero article {
+        position: static;
+        background: #fff;
+        margin: 12px;
+        max-width: none;
+    }
+
+    .hero article img {
+        float: none;
+        display: block;
+        margin: 0 auto 12px;
+    }
 }
