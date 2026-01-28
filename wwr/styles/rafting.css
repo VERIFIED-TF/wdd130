@@ -1,14 +1,13 @@
 :root {
     --body-font: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --heading-font: "Georgia", "Times New Roman", serif;
-    --primary-color: #0b5f6f;
-    /* deep teal for headings */
-    --accent1-color: #0e9aa7;
-    /* lighter teal for body text */
+    --primary-color: #084c5a;
+    /* darker teal for headings */
+    --accent1-color: #0a6c78;
+    /* darker body text */
     --accent2-color: #f2a365;
-    /* warm accent */
+    /* warm accent (now used) */
     --muted-color: #6b6b6b;
-    /* muted text */
     --max-width: 840px;
 }
 
@@ -55,6 +54,11 @@ nav a {
     font-weight: 600;
 }
 
+nav a:hover {
+    color: var(--accent2-color);
+    /* now using accent2 */
+}
+
 /* Headings */
 h1,
 h2 {
@@ -69,10 +73,6 @@ section,
 article {
     margin: 16px;
     padding: 8px;
-}
-
-nav a:hover {
-    color: var(--accent2-color);
 }
 
 /* Hero area */
@@ -112,9 +112,12 @@ nav a:hover {
     left: 16px;
     width: calc(100% - 32px);
     max-width: 520px;
-    background: rgba(255, 255, 255, 0.92);
+    background: rgba(255, 255, 255, 0.98);
+    /* more opaque for contrast */
     padding: 12px;
     border-radius: 6px;
+    color: var(--accent1-color);
+    /* darker text for contrast */
 }
 
 /* Image inside the article floats right */
@@ -124,24 +127,27 @@ nav a:hover {
     height: auto;
     margin-left: 12px;
     border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
-.hero article img {
     box-shadow: 0 0 8px var(--accent2-color);
+    /* using accent2 */
 }
 
 /* History and Adventure sections */
 .history h2,
-
-.adventure {
-    background-color: var(--accent2-color);
-    padding: 16px;
-    border-radius: 6px;
+.adventure h2 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 1.25rem;
 }
 
 .history p {
     color: var(--muted-color);
+}
+
+/* Adventure section with improved contrast */
+.adventure {
+    background-color: #fff;
+    /* changed from accent2 to white for contrast */
+    color: var(--accent1-color);
 }
 
 /* Footer */
