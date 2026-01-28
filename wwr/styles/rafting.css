@@ -125,8 +125,9 @@ article {
     padding: 16px;
     text-align: center;
     opacity: 0.9;
-    background-color: rgba(0, 0, 0, );
-    /* semi-opaque dark teal */
+    /* Fixed the missing alpha value here */
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Fixed contrast here */
     color: rgb(22, 137, 151);
     font-size: 1.6rem;
     letter-spacing: 0.5px;
