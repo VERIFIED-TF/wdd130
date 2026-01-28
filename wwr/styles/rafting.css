@@ -145,7 +145,7 @@ article {
     /* high opacity for contrast */
     padding: 12px;
     border-radius: 6px;
-    color: var(--accent1-color);
+    color: #ffffff;
 }
 
 /* Image inside the article floats right */
