@@ -71,6 +71,10 @@ article {
     padding: 8px;
 }
 
+nav a:hover {
+    color: var(--accent2-color);
+}
+
 /* Hero area */
 .hero {
     position: relative;
@@ -123,12 +127,17 @@ article {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
+.hero article img {
+    box-shadow: 0 0 8px var(--accent2-color);
+}
+
 /* History and Adventure sections */
 .history h2,
-.adventure h2 {
-    margin-top: 8px;
-    margin-bottom: 8px;
-    font-size: 1.25rem;
+
+.adventure {
+    background-color: var(--accent2-color);
+    padding: 16px;
+    border-radius: 6px;
 }
 
 .history p {
