@@ -1,31 +1,40 @@
 :root {
     --body-font: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --heading-font: "Georgia", "Times New Roman", serif;
-    --primary-color: #084c5a;
-    /* darker teal for headings */
+    --primary-color: #073f46;
+    /* headings, high contrast */
     --accent1-color: #0a6c78;
-    /* darker body text */
+    /* body text, accessible */
     --accent2-color: #f2a365;
-    /* warm accent (now used) */
-    --muted-color: #6b6b6b;
+    /* warm accent used for highlights */
+    --muted-color: #5f5f5f;
+    /* secondary text */
     --max-width: 840px;
 }
 
-/* Reset box model */
+/* Universal reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Page layout */
+/* Base layout and typography */
+html,
+body {
+    height: 100%;
+}
+
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
-    background: #fff;
+    background: #ffffff;
     line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+/* Center page content */
 header,
 main,
 footer {
@@ -46,7 +55,7 @@ header {
     width: auto;
 }
 
-/* Simple nav styling */
+/* Navigation */
 nav a {
     margin-left: 12px;
     color: var(--primary-color);
@@ -54,9 +63,17 @@ nav a {
     font-weight: 600;
 }
 
-nav a:hover {
+/* Ensure social media image links have no underline */
+.socialmedia a,
+nav a,
+footer a {
+    text-decoration: none;
+}
+
+/* Hover states */
+nav a:hover,
+.socialmedia a:hover {
     color: var(--accent2-color);
-    /* now using accent2 */
 }
 
 /* Headings */
@@ -64,9 +81,10 @@ h1,
 h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
+    margin: 0;
 }
 
-/* Basic spacing for common elements */
+/* Spacing for common elements */
 nav,
 p,
 section,
@@ -75,13 +93,15 @@ article {
     padding: 8px;
 }
 
-/* Hero area */
+/* HERO: container must be relative so children can be absolute */
 .hero {
     position: relative;
     margin-top: 8px;
     overflow: hidden;
     border-radius: 6px;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    background: #000;
+    /* fallback while image loads */
 }
 
 /* Hero image fills the container */
@@ -91,21 +111,25 @@ article {
     height: auto;
 }
 
-/* H1 overlay on hero */
+/* H1 overlay positioned absolutely over the hero image */
 .hero h1 {
     position: absolute;
     top: 20px;
+    left: 0;
+    right: 0;
     width: 100%;
     padding: 16px;
     text-align: center;
-    opacity: 0.85;
-    background-color: var(--accent1-color);
-    color: #fff;
+    opacity: 0.9;
+    background-color: rgba(7, 63, 70, 0.85);
+    /* semi-opaque dark teal */
+    color: #ffffff;
     font-size: 1.6rem;
     letter-spacing: 0.5px;
+    margin: 0;
 }
 
-/* Article overlay positioned near bottom-left */
+/* Article overlay positioned absolutely on the hero */
 .hero article {
     position: absolute;
     bottom: 16px;
@@ -113,11 +137,10 @@ article {
     width: calc(100% - 32px);
     max-width: 520px;
     background: rgba(255, 255, 255, 0.98);
-    /* more opaque for contrast */
+    /* high opacity for contrast */
     padding: 12px;
     border-radius: 6px;
     color: var(--accent1-color);
-    /* darker text for contrast */
 }
 
 /* Image inside the article floats right */
@@ -127,11 +150,17 @@ article {
     height: auto;
     margin-left: 12px;
     border-radius: 4px;
-    box-shadow: 0 0 8px var(--accent2-color);
-    /* using accent2 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
-/* History and Adventure sections */
+/* Clearfix for article when floated image is present */
+.hero article::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Section headings and text */
 .history h2,
 .adventure h2 {
     margin-top: 8px;
@@ -143,11 +172,12 @@ article {
     color: var(--muted-color);
 }
 
-/* Adventure section with improved contrast */
+/* Adventure section uses accent background with accessible text color */
 .adventure {
-    background-color: #fff;
-    /* changed from accent2 to white for contrast */
-    color: var(--accent1-color);
+    background-color: var(--accent2-color);
+    color: var(--primary-color);
+    padding: 12px;
+    border-radius: 6px;
 }
 
 /* Footer */
@@ -165,12 +195,7 @@ footer p {
     font-size: 0.95rem;
 }
 
-/* Social media links - remove underline for image links */
-.socialmedia a {
-    text-decoration: none;
-    margin-left: 8px;
-}
-
+/* Social media icons */
 .socialmedia img {
     width: 28px;
     height: 28px;
@@ -178,13 +203,18 @@ footer p {
     vertical-align: middle;
 }
 
-/* Responsive tweak for narrow screens */
+/* Responsive adjustments */
 @media (max-width: 880px) {
 
     header,
     main,
     footer {
         width: 94%;
+    }
+
+    .hero h1 {
+        font-size: 1.25rem;
+        padding: 12px;
     }
 
     .hero article {
@@ -198,5 +228,6 @@ footer p {
         float: none;
         display: block;
         margin: 0 auto 12px;
+        width: 140px;
     }
 }
