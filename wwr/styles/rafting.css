@@ -39,6 +39,11 @@ header {
     /* Visual cue matching wireframe purple */
 }
 
+h1,
+h2 {
+    font-family: var(--heading-font);
+}
+
 .logo-container {
     flex: 1;
 }
@@ -73,11 +78,20 @@ nav a {
     right: 0;
     z-index: 10;
     /* Ensures it stays above the article */
-    background-color: rgba(7, 63, 70, 0.85);
+    background-color: rgba(7, 63, 70, );
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 1.5rem;
     margin: 0;
+    width: 100%;
+}
+
+.hero img {
+    width: 100%;
+    height: 500px;
+    display: block;
+    object-fit: cover;
+
 }
 
 /* 3. The Article: Positioned below the H1 */
@@ -93,7 +107,7 @@ nav a {
 }
 
 /* 4. The Image inside Article: FIX REPEATED RULE ERROR */
-/* Delete any other '.hero article img' rules and keep ONLY this one */
+
 .hero article img {
     float: right;
     width: 150px;
