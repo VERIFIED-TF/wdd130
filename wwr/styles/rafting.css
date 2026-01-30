@@ -59,21 +59,60 @@ nav a {
     background: white;
 }
 
-/* --- HERO SECTION (The Crossed-Box Area) --- */
+/* HERO: Fixed to allow absolute positioning of children */
+/* 1. The Container: Must be relative so overlays stay inside it */
 .hero {
-    border: 2px solid #000;
+    position: relative;
     margin: 20px 0;
-    padding: 20px;
-    text-align: center;
-    /* This creates the 'X' effect background if desired, or just keeps the border */
+    overflow: hidden;
 }
 
+/* 2. The Background Image: Positioned normally so it provides the height */
+.hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* 3. The H1: Put this on top of everything using a high z-index */
 .hero h1 {
-    font-family: var(--heading-font);
-    background: none;
-    color: #000;
-    margin-bottom: 20px;
-    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    /* Higher number = stays on top */
+    background-color: rgba(7, 63, 70, 0.8);
+    /* Semi-transparent */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin: 0;
+}
+
+/* 4. The Article: Positioned on top of image, but below H1 */
+.hero article {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 5;
+    /* Lower than H1, higher than background image */
+    width: 80%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* 5. The Small Image inside Article: Must float per your error report */
+.hero article img {
+    float: right;
+    /* Fixes the "Article Image Float" error */
+    width: 150px;
+    height: auto;
+    margin-left: 15px;
+    position: static;
+    /* Important: this specific img shouldn't be absolute */
 }
 
 .hero-content {
@@ -96,6 +135,22 @@ nav a {
     width: 100px;
     height: auto;
     margin-left: 20px;
+}
+
+/* Floating the image to the right of the text */
+.hero article img {
+    float: right;
+    /* REQUIRED per your error report */
+    width: 125px;
+    height: auto;
+    margin-left: 12px;
+}
+
+/* Clearfix to prevent the float from breaking the container */
+.hero article::after {
+    content: "";
+    display: table;
+    clear: both;
 }
 
 /* --- HISTORY SECTION (3-Column Layout) --- */
