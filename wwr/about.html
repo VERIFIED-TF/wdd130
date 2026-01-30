@@ -13,7 +13,9 @@
 
 <body>
     <header>
-        <img src="images/logo.png" alt="White Water Rapids Co logo" class="logo" />
+        <div class="logo-container">
+            <img src="images/logo.png" alt="White Water Rapids Co logo" class="logo" />
+        </div>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
@@ -23,12 +25,9 @@
     </header>
 
     <main>
-        <div class="hero">
-            <img src="images/hero.jpg" alt="Rafting on white water rapids" />
-            <h1>White Water Rapids Co</h1>
-
-            <article>
-                <img src="images/happy-client.jpg" alt="Happy rafting client" />
+        <section class="hero">
+            <h1>White Water Rafting</h1>
+            <div class="hero-content">
                 <p>
                     At White Water Rapids Co we believe every river trip should be thrilling, safe,
                     and memorable.
@@ -36,40 +35,64 @@
                     and our mission
                     is to connect people with wild water and the outdoors.
                 </p>
-            </article>
-        </div>
+                <img src="images/happy-client.jpg" alt="Rafting action" />
+            </div>
+        </section>
 
-        <section class="history">
+        <section class="history-container">
             <h2>History</h2>
-            <p>
-                Founded in 2008 by a group of river guides and outdoor educators, White Water Rapids
-                Co started
-                as a small local outfitter and has grown into a regional leader in guided river
-                adventures.
-                We blend local river knowledge with modern safety practices to deliver great trips
-                for families,
-                first-timers, and experienced paddlers alike.
-            </p>
+            <div class="history-grid">
+                <p>
+                    Founded in 2008 by a group of river guides and outdoor educators, White Water
+                    Rapids
+                    Co started
+                    as a small local outfitter and has grown into a regional leader in guided river
+                    adventures.
+
+                </p>
+                <img src="images/history.jpg" alt="Our history" />
+                <p>
+                    We blend local river knowledge with modern safety practices to deliver great
+                    trips
+                    for families,
+                    first-timers, and experienced paddlers alike.
+                </p>
+            </div>
         </section>
 
         <section class="adventure">
-            <h2>Adventure Awaits You!</h2>
-            <!-- Images and trip highlights will be added in the next assignment -->
+            <h2>Adventure Awaits You</h2>
+            <div class="adventure-gallery">
+                <figure>
+                    <img src="images/adventure1.jpg" alt="Trip 1">
+                    <figcaption>caption</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/adventure2.jpg" alt="Trip 2">
+                    <figcaption>caption</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/adventure3.jpg" alt="Trip 3">
+                    <figcaption>caption</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/adventure4.jpg" alt="Trip 4">
+                    <figcaption>caption</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/adventure5.jpg" alt="Trip 5">
+                    <figcaption>caption</figcaption>
+                </figure>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>© 2026 White Water Rapids Co — Lucky francis </p>
+        <p>© 2026 White Water Rapids Co — Lucky francis</p>
         <nav class="socialmedia">
-            <a href="https://facebook.com">
-                <img src="images/facebook.svg" alt="Facebook Icon">
-            </a>
-            <a href="https://linkedin.com">
-                <img src="images/linkedin.svg" alt="LinkedIn Icon">
-            </a>
-            <a href="https://instagram.com">
-                <img src="images/instagram.svg" alt="Instagram Icon">
-            </a>
+            <a href="https://facebook.com"><img src="images/facebook.svg" alt="Facebook"></a>
+            <a href="https://linkedin.com"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+            <a href="https://instagram.com"><img src="images/instagram.svg" alt="Instagram"></a>
         </nav>
     </footer>
 </body>

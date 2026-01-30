@@ -2,13 +2,9 @@
     --body-font: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --heading-font: "Georgia", "Times New Roman", serif;
     --primary-color: #073f46;
-    /* headings, high contrast */
     --accent1-color: #0a6c78;
-    /* body text, accessible */
     --accent2-color: #f2a365;
-    /* warm accent used for highlights */
     --muted-color: #5f5f5f;
-    /* secondary text */
     --max-width: 840px;
 }
 
@@ -19,22 +15,13 @@
     box-sizing: border-box;
 }
 
-/* Base layout and typography */
-html,
-body {
-    height: 100%;
-}
-
 body {
     font-family: var(--body-font);
     color: var(--accent1-color);
     background: #ffffff;
     line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Center page content */
 header,
 main,
 footer {
@@ -42,12 +29,18 @@ footer {
     margin: 0 auto;
 }
 
-/* Header */
+/* --- HEADER (Matches Wireframe Top Bar) --- */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 16px;
+    background-color: #d9caff;
+    /* Visual cue matching wireframe purple */
+}
+
+.logo-container {
+    flex: 1;
 }
 
 .logo {
@@ -55,184 +48,167 @@ header {
     width: auto;
 }
 
-/* Navigation */
 nav a {
     margin-left: 12px;
     color: var(--primary-color);
     text-decoration: none;
     font-weight: 600;
+    border: 1px solid #000;
+    /* Added to match the boxed buttons in wireframe */
+    padding: 5px 15px;
+    background: white;
 }
 
-/* Ensure social media image links have no underline */
-.socialmedia a,
-nav a,
-footer a {
-    text-decoration: none;
-}
-
-/* Hover states */
-nav a:hover,
-.socialmedia a:hover {
-    color: var(--accent2-color);
-}
-
-/* Headings */
-h1 {
-    background-color: rgba(7, 63, 70, 0.85);
-    color: rgb(255, 255, 255);
-}
-
-h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-    margin: 0;
-}
-
-/* Spacing for common elements */
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
-}
-
-/* HERO: container must be relative so children can be absolute */
+/* --- HERO SECTION (The Crossed-Box Area) --- */
 .hero {
-    position: relative;
-    margin-top: 8px;
-    overflow: hidden;
-    border-radius: 6px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-    background: #000;
-    /* fallback while image loads */
-}
-
-/* Hero image fills the container */
-.hero img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-/* H1 overlay positioned absolutely over the hero image */
-.hero h1 {
-    position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    padding: 16px;
+    border: 2px solid #000;
+    margin: 20px 0;
+    padding: 20px;
     text-align: center;
-    opacity: 0.9;
-    /* Fixed the missing alpha value here */
-    background-color: rgba(0, 0, 0, 0.8);
-    /* Fixed contrast here */
-    color: rgb(22, 137, 151);
-    font-size: 1.6rem;
-    letter-spacing: 0.5px;
-    margin: 0;
+    /* This creates the 'X' effect background if desired, or just keeps the border */
 }
 
-/* Article overlay positioned absolutely on the hero */
-.hero article {
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    width: calc(100% - 32px);
-    max-width: 520px;
-    background: rgba(255, 255, 255, 0.98);
-    /* high opacity for contrast */
-    padding: 12px;
-    border-radius: 6px;
-    color: #ffffff;
+.hero h1 {
+    font-family: var(--heading-font);
+    background: none;
+    color: #000;
+    margin-bottom: 20px;
+    font-size: 2rem;
 }
 
-/* Image inside the article floats right */
-.hero article img {
-    float: right;
-    width: 125px;
+.hero-content {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 90%;
+    background: white;
+}
+
+.hero-content p {
+    flex: 2;
+    text-align: left;
+}
+
+.hero-content img {
+    flex: 1;
+    width: 100px;
     height: auto;
-    margin-left: 12px;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-left: 20px;
 }
 
-/* Clearfix for article when floated image is present */
-.hero article::after {
-    content: "";
-    display: table;
-    clear: both;
+/* --- HISTORY SECTION (3-Column Layout) --- */
+.history-container {
+    text-align: center;
+    margin: 20px 0;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
 }
 
-/* Section headings and text */
-.history h2,
-.adventure h2 {
-    margin-top: 8px;
-    margin-bottom: 8px;
-    font-size: 1.25rem;
+.history-grid {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
 }
 
-.history p {
-    color: var(--muted-color);
+.history-grid p {
+    flex: 1;
 }
 
-/* Adventure section uses accent background with accessible text color */
+.history-grid img {
+    width: 200px;
+    height: 150px;
+    background-color: #3b1e8a;
+    /* Deep purple matching wireframe image box */
+    object-fit: cover;
+}
+
+/* --- ADVENTURE SECTION (5-Column Layout) --- */
 .adventure {
-    background-color: var(--accent2-color);
-    color: var(--primary-color);
-    padding: 12px;
-    border-radius: 6px;
+    background-color: #f0f0f0;
+    /* Keeping it neutral like wireframe */
+    padding: 20px;
+    text-align: center;
 }
 
-/* Footer */
+.adventure-gallery {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.adventure-gallery figure {
+    flex: 1;
+}
+
+.adventure-gallery img {
+    width: 100%;
+    height: auto;
+    background: #ccc;
+}
+
+.adventure-gallery figcaption {
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+
+/* Footer Container */
 footer {
     display: flex;
     align-items: center;
+    /* Vertically centers text and icons */
     justify-content: space-between;
+    /* Pushes text left and icons right */
     padding: 16px;
-    border-top: 1px solid #eee;
+    background-color: #d9caff;
+    /* Matches your wireframe purple */
     margin-top: 24px;
+    border-top: 1px solid #eee;
+    width: var(--max-width);
+    margin: 24px auto 0;
+    /* Centers footer on page */
 }
 
 footer p {
+    margin: 0;
+    /* Removes default paragraph margins that might push the footer height */
     color: var(--muted-color);
     font-size: 0.95rem;
 }
 
-/* Social media icons */
-.socialmedia img {
-    width: 28px;
-    height: 28px;
-    display: inline-block;
-    vertical-align: middle;
+/* Social Media Nav Container */
+.socialmedia {
+    display: flex;
+    gap: 10px;
+    /* Space between the icons */
+    margin: 0;
+    padding: 0;
 }
 
-/* Responsive adjustments */
-@media (max-width: 880px) {
+/* Social Media Links/Icons */
+.socialmedia a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
 
-    header,
-    main,
-    footer {
-        width: 94%;
-    }
+.socialmedia img {
+    width: 32px;
+    /* Set a consistent size */
+    height: 32px;
+    display: block;
+    /* Optional: If you want the boxed look from the wireframe, keep the next lines */
+    border: 1px solid #000;
+    padding: 4px;
+    background-color: white;
+}
 
-    .hero h1 {
-        font-size: 1.25rem;
-        padding: 12px;
-    }
-
-    .hero article {
-        position: static;
-        background: #fff;
-        margin: 12px;
-        max-width: none;
-    }
-
-    .hero article img {
-        float: none;
-        display: block;
-        margin: 0 auto 12px;
-        width: 140px;
-    }
+/* Hover state for icons */
+.socialmedia img:hover {
+    background-color: var(--accent2-color);
+    transition: 0.3s;
 }
