@@ -78,7 +78,7 @@ nav a {
     right: 0;
     z-index: 10;
     /* Ensures it stays above the article */
-    background-color: rgba(7, 63, 70, o.9);
+    background-color: rgba(7, 63, 70, 0.8);
     color: white;
     text-align: center;
     padding: 1.5rem;
