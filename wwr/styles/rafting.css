@@ -78,7 +78,7 @@ nav a {
     right: 0;
     z-index: 10;
     /* Ensures it stays above the article */
-    background-color: rgba(7, 63, 70, );
+    background-color: rgba(7, 63, 70, o.9);
     color: white;
     text-align: center;
     padding: 1.5rem;
@@ -91,7 +91,6 @@ nav a {
     height: 500px;
     display: block;
     object-fit: cover;
-
 }
 
 /* 3. The Article: Positioned below the H1 */
