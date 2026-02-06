@@ -231,3 +231,127 @@ footer p {
     background-color: var(--accent2-color);
     transition: 0.3s;
 }
+
+/* Company Info */
+.company-info iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    /* remove inline style */
+    margin-top: 12px;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Team Profiles */
+.team .profiles {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.team figure {
+    flex: 1;
+    text-align: center;
+}
+
+.team img {
+    width: 100%;
+    max-width: 180px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.team figcaption {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: var(--muted-color);
+}
+
+/* Contact Information */
+.company-info {
+    margin: 20px 0;
+}
+
+.company-info p {
+    margin: 6px 0;
+}
+
+/* Contact Form */
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.contact-form label,
+.contact-form legend {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.contact-form fieldset {
+    border: 1px solid #ccc;
+    padding: 12px;
+    border-radius: 6px;
+}
+
+.contact-form button {
+    background-color: var(--accent2-color);
+    color: #fff;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: var(--primary-color);
+}
+
+/* Map */
+.map iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Team Profiles */
+.team .profiles {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.team figure {
+    flex: 1;
+    text-align: center;
+}
+
+.team img {
+    width: 100%;
+    max-width: 180px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.team figcaption {
+    margin-top: 8px;
+    font-size: 0.95rem;
+    color: var(--muted-color);
+}
