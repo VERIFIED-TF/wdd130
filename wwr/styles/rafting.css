@@ -249,6 +249,7 @@ footer p {
     justify-content: space-between;
     gap: 16px;
     flex-wrap: wrap;
+    margin-top: 16px;
 }
 
 .team figure {
@@ -327,31 +328,4 @@ footer p {
     border: none;
     border-radius: 6px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Team Profiles */
-.team .profiles {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 16px;
-}
-
-.team figure {
-    flex: 1;
-    text-align: center;
-}
-
-.team img {
-    width: 100%;
-    max-width: 180px;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.team figcaption {
-    margin-top: 8px;
-    font-size: 0.95rem;
-    color: var(--muted-color);
 }
