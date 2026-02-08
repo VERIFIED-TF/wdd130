@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>White Water Rapids Co — Contact Us</title>
     <meta name="description"
-      content="Contact White Water Rapids Co. Find our address, phone, email, meet our team, and send us a message using the contact form." />
-    <meta name="author" content="Lucky Francis Oghenebrume" />
-    <link rel="stylesheet" href="styles/rafting.css" />
+      content="Contact White Water Rapids Co. Find our address, phone, email, meet our team, and send us a message using the contact form.">
+    <meta name="author" content="Lucky Francis Oghenebrume">
+    <link rel="stylesheet" href="styles/rafting.css">
 </head>
 
 <body>
@@ -26,7 +26,7 @@
     <main>
         <!-- Contact Information -->
         <section class="company-info">
-            <h2>Contact Information</h2>
+            <h1>Contact Information</h1>
             <p><strong>White Water Rafting Company</strong></p>
             <p>123 River St, Downieville, CA 95936, United States</p>
             <p>Phone: +1 336 484 1639</p>
@@ -45,21 +45,29 @@
 
                 <fieldset>
                     <legend>Purpose of Message:</legend>
-                    <label><input type="radio" name="purpose" value="general" required /> General
-                        Inquiry</label>
-                    <label><input type="radio" name="purpose" value="reservation" /> Reservation
-                        Question</label>
-                    <label><input type="radio" name="purpose" value="suggestion" /> Website
-                        Suggestion</label>
+                    <label for="general"><input type="radio" id="general" name="purpose"
+                          value="general" required />
+                        General Inquiry</label>
+                    <label for="reservation"><input type="radio" id="reservation" name="purpose"
+                          value="reservation" /> Reservation Question</label>
+                    <label for="suggestion"><input type="radio" id="suggestion" name="purpose"
+                          value="suggestion" />
+                        Website Suggestion</label>
                 </fieldset>
+
+                <label for="newsletter">
+                    <input type="checkbox" id="newsletter" name="newsletter" />
+                    Please subscribe me to the monthly newsletter
+                </label>
 
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" rows="5" required></textarea>
 
-                <label>
-                    <input type="checkbox" name="newsletter" /> Please subscribe me to the monthly
-                    newsletter
+                <label for="newsletter">
+                    <input type="checkbox" id="newsletter" name="newsletter" />
+                    Please subscribe me to the monthly newsletter
                 </label>
+
 
                 <button type="submit">Get in Touch!</button>
             </form>
