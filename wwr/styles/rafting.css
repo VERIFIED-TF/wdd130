@@ -1,331 +1,906 @@
 :root {
+
     --body-font: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
     --heading-font: "Georgia", "Times New Roman", serif;
+
     --primary-color: #073f46;
+
     --accent1-color: #0a6c78;
+
     --accent2-color: #f2a365;
+
     --muted-color: #5f5f5f;
+
     --max-width: 840px;
+
 }
 
 /* Universal reset */
+
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
 
 body {
+
     font-family: var(--body-font);
+
     color: var(--accent1-color);
+
     background: #ffffff;
+
     line-height: 1.5;
+
 }
 
 header,
+
 main,
+
 footer {
+
     width: var(--max-width);
+
     margin: 0 auto;
+
 }
 
 /* --- HEADER (Matches Wireframe Top Bar) --- */
+
 header {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     padding: 16px;
+
     background-color: #d9caff;
-    /* Visual cue matching wireframe purple */
+    position: relative
+        /* Visual cue matching wireframe purple */
+
 }
 
 h1,
+
 h2 {
+
     font-family: var(--heading-font);
+
 }
 
 .logo-container {
+
     flex: 1;
+
 }
 
 .logo {
+
     height: 56px;
+
     width: auto;
+
 }
 
 nav a {
+
     margin-left: 12px;
+
     color: var(--primary-color);
+
     text-decoration: none;
+
     font-weight: 600;
+
     border: 1px solid #000;
+
     /* Added to match the boxed buttons in wireframe */
+
     padding: 5px 15px;
+
     background: white;
+
 }
 
 /* 1. Hero Container: Must be relative */
+
 .hero {
+
     position: relative;
+
     display: block;
+
 }
 
 /* 2. The H1: MUST have high z-index to stay on TOP of the article */
+
 .hero h1 {
+
     position: absolute;
-    top: 20px;
+
+    top: 0px;
+
     left: 0;
+
     right: 0;
+
     z-index: 10;
+
     /* Ensures it stays above the article */
+
     background-color: rgba(7, 63, 70, 0.8);
+
     color: white;
+
     text-align: center;
+
     padding: 1.5rem;
+
     margin: 0;
+
     width: 100%;
+
 }
 
 .hero img {
+
     width: 100%;
+
     height: 500px;
+
     display: block;
+
     object-fit: cover;
+
 }
 
 /* 3. The Article: Positioned below the H1 */
+
 .hero article {
+
     position: absolute;
+
     bottom: 20px;
+
     left: 20px;
+
     z-index: 5;
+
     background: rgba(255, 255, 255, 0.9);
+
     padding: 15px;
+
     max-width: 500px;
+
 }
 
 /* 4. The Image inside Article: FIX REPEATED RULE ERROR */
 
 .hero article img {
+
     float: right;
+
     width: 150px;
+
     height: auto;
+
     margin-left: 15px;
+
 }
 
 .hero-content {
+
     display: flex;
+
     align-items: center;
+
     border: 1px solid #000;
+
     padding: 20px;
+
     margin: 0 auto;
+
     max-width: 90%;
+
     background: white;
+
 }
 
 .hero-content p {
+
     flex: 2;
+
     text-align: left;
+
 }
 
 .hero-content img {
+
     flex: 1;
+
     width: auto;
+
     height: auto;
+
     margin-left: 20px;
+
 }
 
 /* --- HISTORY SECTION (3-Column Layout) --- */
+
 .history-container {
+
     text-align: center;
+
     margin: 20px 0;
+
     border-top: 1px solid #ccc;
+
     padding-top: 20px;
+
 }
 
 .history-grid {
+
     display: flex;
+
     align-items: center;
+
     gap: 20px;
+
     padding: 10px;
+
 }
 
 .history-grid p {
+
     flex: 1;
+
 }
 
 .history-grid img {
+
     width: 200px;
+
     height: 150px;
+
     background-color: #3b1e8a;
+
     /* Deep purple matching wireframe image box */
+
     object-fit: cover;
+
 }
 
 /* --- ADVENTURE SECTION (5-Column Layout) --- */
+
 .adventure {
+
     background-color: #f0f0f0;
+
     /* Keeping it neutral like wireframe */
+
     padding: 20px;
+
     text-align: center;
+
 }
 
 .adventure-gallery {
+
     display: flex;
+
     justify-content: space-around;
+
     gap: 10px;
+
     margin-top: 15px;
+
 }
 
 .adventure-gallery figure {
+
     flex: 1;
+
 }
 
 .adventure-gallery img {
+
     width: 100%;
+
     height: auto;
+
     background: #ccc;
+
 }
 
 .adventure-gallery figcaption {
+
     margin-top: 8px;
+
     font-size: 0.9rem;
+
 }
 
 /* Footer Container */
+
 footer {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     padding: 20px;
+
     background-color: #d9caff;
+
+    max-width: var(--max-width);
+
+    margin: 40px auto 0;
+
 }
 
-footer p {
-    margin: 0;
-    /* Removes default paragraph margins that might push the footer height */
-    color: var(--muted-color);
-    font-size: 0.95rem;
+footer nav a {
+
+    border: none;
+
+    background: transparent;
+
+    text-decoration: none;
+
+    margin-left: 15px;
+
+    font-size: 0.9rem;
+
+}
+
+footer nav a:hover {
+
+    text-decoration: underline;
+
 }
 
 .socialmedia {
-    display: flex;
-    gap: 15px;
-}
 
-.socialmedia a {
-    text-decoration: none;
+    display: flex;
+
+    gap: 12px;
+
 }
 
 .socialmedia img {
-    width: 32px;
+
+    width: 28px;
+
     height: auto;
-    /* Remove background and border to get rid of the white boxes in your photo */
+
     background: transparent;
+
     border: none;
-    padding: 0;
+
+    border-radius: 50%;
+
+    transition: 0.3s ease;
+
 }
 
-/* Hover state for icons */
 .socialmedia img:hover {
+
     background-color: var(--accent2-color);
-    transition: 0.3s;
+
+    transform: translateY(-3px);
+
 }
 
 /* Company Info */
+
 .company-info iframe {
+
     width: 100%;
+
     height: 300px;
+
     border: none;
+
     /* remove inline style */
+
     margin-top: 12px;
+
     border-radius: 6px;
+
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
 }
 
 /* Team Profiles */
+
 .team .profiles {
+
     display: flex;
+
     justify-content: space-between;
+
     gap: 16px;
+
     flex-wrap: wrap;
+
     margin-top: 16px;
+
 }
 
 .team figure {
+
     flex: 1;
+
     text-align: center;
+
 }
 
 .team img {
+
     width: 100%;
+
     max-width: 180px;
+
     border-radius: 50%;
+
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .team figcaption {
+
     margin-top: 8px;
+
     font-size: 0.95rem;
+
     color: var(--muted-color);
+
 }
 
 /* Contact Information */
+
 .company-info {
+
     margin: 20px 0;
+
 }
 
 .company-info p {
+
     margin: 6px 0;
+
 }
 
 /* Contact Form */
+
 .contact-form form {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 12px;
+
     margin: 20px 0;
+
 }
 
 .contact-form label,
+
 .contact-form legend {
+
     font-weight: 600;
+
     color: var(--primary-color);
+
 }
 
 .contact-form input[type="text"],
+
 .contact-form input[type="email"],
+
 .contact-form textarea {
+
     padding: 8px;
+
     border: 1px solid #ccc;
+
     border-radius: 4px;
+
 }
 
 .contact-form fieldset {
+
     border: 1px solid #ccc;
+
     padding: 12px;
+
     border-radius: 6px;
+
 }
 
 .contact-form button {
+
     background-color: var(--accent2-color);
+
     color: #fff;
+
     font-weight: bold;
+
     padding: 12px;
+
     border: none;
+
     border-radius: 6px;
+
     cursor: pointer;
+
 }
 
 .contact-form button:hover {
+
     background-color: var(--primary-color);
+
 }
 
 /* Map */
+
 .map iframe {
+
     width: 100%;
+
     height: 300px;
+
     border: none;
+
     border-radius: 6px;
+
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+/* ===============================
+
+   HOME PAGE ADDITIONS
+
+   =============================== */
+
+/* HERO SECTION */
+
+/* Home hero image behavior */
+
+body.home .hero img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+/* Dark overlay ONLY on home hero */
+
+body.home .hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.20);
+
+    z-index: 1;
+
+}
+
+body.home .hero {
+
+    position: relative;
+
+}
+
+/* Remove boxed overlay & center text properly */
+
+body.home .hero-text {
+
+    position: absolute;
+
+    top: 22%;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: none;
+
+    padding: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+/* Fix H1 to match sample (single line, script style) */
+
+body.home .hero-text h1 {
+
+    font-family: 'Rock Salt', cursive;
+
+    font-size: 3.2rem;
+
+    font-weight: normal;
+
+    letter-spacing: 2px;
+
+    line-height: 1.2;
+
+    margin-bottom: 0.5rem;
+
+    color: #e6d2b5;
+
+}
+
+/* Subtitle spacing and size */
+
+body.home .hero-text p {
+
+    font-size: 1rem;
+
+    margin-bottom: 1.25rem;
+
+    color: #ffffff;
+
+    opacity: 0.95;
+
+}
+
+body.home .hero h1 {
+
+    position: static;
+
+    background: none;
+
+    padding: 0;
+
+    margin-bottom: 1rem;
+
+    text-align: center;
+
+}
+
+/* Button style and placement */
+
+body.home .hero-text .btn {
+
+    position: relative;
+
+    z-index: 3;
+
+    background-color: #f2a365;
+
+    color: #000000;
+
+    font-weight: 700;
+
+    border: none
+}
+
+/* Header overlay ONLY on home */
+
+body.home header {
+
+    position: relative;
+
+    top: 0;
+
+    width: 100%;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    z-index: 10;
+
+}
+
+/* BUTTONS (CTA) */
+
+.btn {
+
+    display: inline-block;
+
+    background-color: #6b705c;
+
+    color: white;
+
+    padding: 0.75rem 1.5rem;
+
+    text-decoration: none;
+
+    border-radius: 4px;
+
+}
+
+/* FEATURES GRID (Rivers, Camping, Rapids) */
+
+.features {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 2rem;
+
+    padding: 4rem;
+
+    text-align: center;
+
+}
+
+.feature img {
+
+    width: 100%;
+
+    border: 4px solid #d4b483;
+
+}
+
+/* SPLIT IMAGE + TEXT SECTION */
+
+.highlight {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    gap: 2rem;
+
+    padding: 3rem;
+
+    background-color: #d4b483;
+
+    align-items: center;
+
+}
+
+.highlight img {
+
+    width: 100%;
+
+}
+
+.highlight-text {
+
+    background-color: #6b705c;
+
+    color: white;
+
+    padding: 2rem;
+
+}
+
+/* OPTIONAL: HEADER OVER HERO IMAGE */
+
+body.header {
+
+    position: relative;
+
+    width: 100%;
+
+    z-index: 10;
+
+}
+
+body.home .hero h1,
+
+body.home .hero-text h1 {
+
+    background: none;
+
+    padding: 0;
+
+}
+
+/* Stack hero text items vertically */
+
+body.home .hero-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 1rem;
+
+}
+
+body.home .hero-text .btn:hover {
+
+    background-color: #ffd2a6;
+
+}
+
+/* TABLE STYLING */
+
+.trips-table {
+
+    margin: 40px auto;
+
+    padding: 0 20px;
+
+    max-width: var(--max-width);
+
+}
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 20px;
+
+    font-family: var(--body-font);
+
+}
+
+th,
+
+td {
+
+    padding: 12px;
+
+    text-align: left;
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+th {
+
+    background-color: var(--primary-color);
+
+    color: white;
+
+}
+
+/* Zebra striping for easier reading */
+
+tr:nth-child(even) {
+
+    background-color: #f9f9f9;
+
+}
+
+caption {
+
+    padding: 10px;
+
+    font-weight: bold;
+
+    font-style: italic;
+
 }
